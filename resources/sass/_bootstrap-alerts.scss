@@ -1,0 +1,121 @@
+/* Bootstrap Alerts */
+.alert {
+  font-size: $default-font-size;
+  padding: 0.75rem 0rem;
+  svg {
+    vertical-align: middle;
+    line-height: 0.5;
+  }
+  h1, h2, h3, h4, p {
+    margin: 0 !important;
+  }
+}
+// @each $color, $value in $theme-colors {
+//   .alert-#{$color} {
+//     @include alert-variant(rgba(theme-color($color), .2), theme-color-level($color, 1), theme-color-level($color, 3));
+//     .close {
+//       color: #ffffff;
+//       opacity: 1;
+//       font-size: inherit !important;
+//     }
+//   }
+// }
+// @each $color, $value in $theme-colors {
+//   .alert-fill-#{$color} {
+//     @include alert-variant(theme-color($color), theme-color($color), color(white));
+//     .close {
+//       color: #ffffff;
+//       opacity: 1;
+//       font-size: inherit !important;
+//     }
+
+//   }
+// }
+
+.alerts {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+  &__icon {
+    width: 60px;
+    padding: 25px 0;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    @include rel;
+    svg {
+      font-size: 30px;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__content {
+    background-color: $white;
+    padding: 23px 28px 23px 23px;
+    width: calc(100% - 60px);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    @include rel;
+    h6 {
+      color: $main-font;
+      font-size: 18px;
+      font-weight: $bold;
+      margin: 0;
+      line-height: 1.4;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -9px;
+      font-size: 1em;
+    }
+  }
+  &--error {
+    .alerts__icon {
+      background-color: $brand-red;
+    }
+    .alerts__content {
+      background-color: tint( $brand-red, 50% );
+      h6, button {
+        color: $white;
+      }
+    }
+  }
+  &--warning {
+    .alerts__icon {
+      background-color: $brand-orange;
+    }
+    .alerts__content {
+      background-color: tint( $brand-orange, 50% );
+      h6, button {
+        color: $white;
+      }
+    }
+  }
+  &--success {
+    .alerts__icon {
+      background-color: $brand-green;
+    }
+    .alerts__content {
+      background-color: tint( $brand-green, 50% );
+      h6, button {
+        color: $white;
+      }
+    }
+  }
+  &--info {
+    .alerts__icon {
+      background-color: $brand-blue;
+    }
+    .alerts__content {
+      background-color: tint( $brand-blue, 50% );
+      h6, button {
+        color: $white;
+      }
+    }
+  }
+}
