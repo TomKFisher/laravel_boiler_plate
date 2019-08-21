@@ -68,6 +68,15 @@ class MenuServiceProvider extends ServiceProvider
                             ]
                         ]);
                     }
+                    if( auth()->user()->can('browse-api-key') ) {
+                        $sub->add([
+                            'route' => ['api-key.index', []],
+                            'attributes' => [
+                                'content' => 'API Key',
+                                'icon' => 'fas fa-file-text-o pull-right'
+                            ]
+                        ]);
+                    }
                     $sub->add([
                         'route' => ['logout', []],
                         'attributes' => [

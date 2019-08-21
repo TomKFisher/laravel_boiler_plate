@@ -11,10 +11,11 @@ use App\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as HasAudits;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail, Auditable
 {
-    use HasRoles, Notifiable, UsesTenantConnection, SoftDeletes, HasAudits;
+    use HasApiTokens, HasRoles, Notifiable, UsesTenantConnection, SoftDeletes, HasAudits;
 
     /**
      * The attributes that are mass assignable.

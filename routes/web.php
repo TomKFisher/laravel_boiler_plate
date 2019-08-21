@@ -42,6 +42,12 @@ Route::group(['middleware' => ['auth','verified']], function(){
     });
     Route::resource('logs', 'AuditController');
     
+    Route::group(['prefix' => 'api-key'], function(){
+        Route::get('view', ['as'=>'api-key.index', 'uses'=>'APIController@index']);
+        Route::post('generate', ['as'=>'api-key.generate', 'uses'=>'APIController@generate']);
+        Route::post('revoke/{id}', ['as'=>'api-key.revoke', 'uses'=>'APIController@revoke']);
+    });
+
     Route::get('/media/{path}', '\Hyn\Tenancy\Controllers\MediaController')
         ->where('path', '.+')
         ->name('tenant.media');

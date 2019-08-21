@@ -17,7 +17,8 @@ class TenantDatabaseSeeder extends Seeder
         $adminPermissions = collect([
             'browse-role', 'read-role', 'edit-role', 'add-role', 'delete-role', 
             'browse-user', 'read-user', 'edit-user', 'add-user', 'delete-user',
-            'browse-audit', 'read-audit', 'restore-audit'
+            'browse-audit', 'read-audit', 'restore-audit',
+            'read-api-key', 'generate-api-key', 'revoke-api-key'
         ])->map(function ($name) {
             return Permission::create(['name' => $name]);
         });
