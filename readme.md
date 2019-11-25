@@ -15,6 +15,7 @@
 - Once the .env file is setup you can migrate : **php artisan migrate**
 - **npm install**
 - **npm run dev**
+- - We then need to generate the Passport Keys : **php artisan passport:keys**
 - Time to create a new tenant
     - **php artisan tenant:create *{tenant name}* *{tenant admin@email address}***
     - replace {tenant name} with what will become the sub-domain, example will be example.example.com
